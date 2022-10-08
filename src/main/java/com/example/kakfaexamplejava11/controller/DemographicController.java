@@ -19,8 +19,8 @@ public class DemographicController {
 
     @PostMapping("/province")
     public ResponseEntity<Province> postProvince(@RequestBody Province province) throws JsonProcessingException {
-        demographyProducer.send(province);
-
+//        demographyProducer.send(province);
+        demographyProducer.sendP(province);
         return ResponseEntity.status(HttpStatus.CREATED).body(province);
     }
 }
