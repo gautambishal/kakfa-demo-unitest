@@ -1,0 +1,19 @@
+spring:
+  profiles:
+    active: local
+---
+spring:
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.LongSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    admin:
+      properties:
+        bootstrap.servers: localhost:9092
+    template:
+      default-topic: demography
+  config:
+    activate:
+      on-profile: local
+
